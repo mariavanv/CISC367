@@ -8,7 +8,7 @@ Needs work: Unittests, file handling, exception handling, lambdas
 
 
 Overall: I am familiar/good with all of these things in java (except decorators, lambdas, tuples, and list comprehensions).
-Definitely need brushing up on python syntax. Most things I could do pretty easily in 
+Definitely need brushing up on python syntax.
 
 
     Variables, types, values, assignment: pretty good
