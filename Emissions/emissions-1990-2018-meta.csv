@@ -1,0 +1,35 @@
+,Name,Emissions New,,,
+1,Version,1.0.0,,,
+2,Author,Maria van Venrooy,,,
+3,Created,3/20/2021,,,
+4,Data File,emissions-1990-2018.csv,,,
+5,Overview,The  Emissions Database for Atmospheric Research (EDGAR) supported by the European Union shows green house gas emissons by country. This data set contains CO2 emissions data from 1990 through 2018.,,,
+6,Data Source,https://edgar.jrc.ec.europa.eu/overview.php?v=booklet2019&dst=CO2emi,,,
+7,Description,"This data set shows countries' CO2 emissions from 1990 to 2018, and the % of the world total for each country in 2018",,,
+8,Tags,"Emissions, CO2, carbon dioxide, climate change, greenhouse gasses",,,
+9,Acknowledgement,Dr. Bart,,,
+10,Row,Country,,,
+11,Row Explanation,The country whose CO2 total emissions are reported,,,
+12,Icon,emissions-icon.png,,,
+13,Splash,EDGAR-logo.png,,,
+14,Properties,Name,Type,Index,Description
+15,,Country,string,x,The name of a country
+16,,Year,int,x,The year of the emissions (1970-2012)
+17,,Emissions.Type.CO2,float,,The amount of carbon dioxide in kilo tons
+18,,Emissions.Type.N2O,float,,The amount of nitrous oxide in equivalent kilotons of CO2
+19,,Emissions.Type.CH4,float,,The amount of methane in equivalent kilotons of CO2
+20,,Emissions.Sector.Power Industry,float,,Emissions from the power industry; measured in equivalent kilotons of CO2.
+21,,Emissions.Sector.Buildings,float,,Emissions from the infrastructure of buildings; measured in equivalent kilotons of CO2.
+22,,Emissions.Sector.Transport,float,,Emissions from means of transportation; measured in equivalent kilotons of CO2.
+23,,Emissions.Sector.Other Industry,float,,Emissions from the other industrical combustion; measured in equivalent kilotons of CO2.
+24,,Emissions.Sector.Other sectors,float,,Emissions from various other sectors; measured in equivalent kilotons of CO2.
+25,,Ratio.Per GDP,float,,"The amount of green house gas emissions per $1,000 of GDP; measured in equivalent kilo tons of CO2."
+26,,Ratio.Per Capita,float,,The amount of green house gas emissions for each person; measured in equivalent kilo tons of CO2.
+27,,1990mton,float,,Amount of CO2 in metric tons realeased by the country in 1990
+28,,2000mton,float,,Amount of CO2 in metric tons realeased by the country in 2000
+29,,2005mton,float,,Amount of CO2 in metric tons realeased by the country in 2005
+30,,2010mton,float,,Amount of CO2 in metric tons realeased by the country in 2010
+31,,2015mton,float,,Amount of CO2 in metric tons realeased by the country in 2015
+32,,2017mton,float,,Amount of CO2 in metric tons realeased by the country in 2017
+33,,2018mton,float,,Amount of CO2 in metric tons realeased by the country in 2018
+34,,2018perc,float,,Percent of the world's total 2018 CO2 emissions released by this country
