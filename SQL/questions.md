@@ -157,24 +157,44 @@ ORDER BY SUM(buy_price) desc
 
 ```sql
 
+SELECT tag, SUM(height * width)
+FROM houseware
+WHERE interact = 1
+GROUP BY tag
+ORDER BY SUM(height * width) desc
+
 
 ```
 
 19. [JOIN, GROUP BY] For each item, how many distinct materials does it require?
 
 ```sql
-
+SELECT houseware.name, COUNT(recipe.amount)
+FROM houseware, houseware_recipe, recipe
+WHERE recipe.recipe_id = houseware_recipe.recipe_id
+      AND houseware_recipe.houseware_id = houseware.id
+GROUP BY houseware.name
 ```
 
 20 [GROUP BY, ORDER, LIMIT] What are the top 10 materials used in recipes (calculated by totaling the amounts per material).
 
 ```sql
 
+SELECT material, SUM(amount) as total
+FROM recipe
+GROUP BY material
+ORDER BY total DESC
+LIMIT 10
+
 ```
 
 21. [JOIN, WHERE] List all the recipes that require at least 10 star fragments
 
 ```sql
+SELECT a.name, c.amount
+FROM houseware a, houseware_recipe b, recipe c
+WHERE c.recipe_id = b.recipe_id AND b.houseware_id = a.id
+AND c.material = 'star fragment' AND c.amount >= 10
 
 ```
 
@@ -182,10 +202,22 @@ ORDER BY SUM(buy_price) desc
 
 ```sql
 
+SELECT houseware.tag, COUNT(sell_price) as count1
+FROM houseware, houseware_recipe, recipe
+WHERE recipe.recipe_id = houseware_recipe.recipe_id AND houseware_recipe.houseware_id = houseware.id
+AND recipe.material = 'stone'
+GROUP BY tag
+ORDER BY count1 DESC
+
 ```
 
 23. [JOIN, WHERE] Get the names and colors of all housewares.
 
 ```sql
+
+SELECT houseware.name as "houseware name", variation_color.name as "var color"
+FROM variation_color, variation, houseware
+WHERE variation_color.variation_id = variation.id 
+AND houseware.id = variation.houseware_id
 
 ```
