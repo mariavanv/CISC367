@@ -1,4 +1,12 @@
 import scrapy
+from scrapy.item import Field, Item
+
+class Bunny(Item):
+    name = Field()
+    snrWeight = Field()
+    bunType = Field()
+    color = Field()
+    dist = Field()
 
 
 class BunniesSpider(scrapy.Spider):
@@ -13,6 +21,9 @@ class BunniesSpider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
+        #hxs = HtmlXPathSelector(response)
+        #item = Bunny()
+        #item["name"] = hxs.select
         page = response.url.split("/")[-2]
         filename = f'bunnies-{page}.html'
         with open(filename, 'wb') as f:
